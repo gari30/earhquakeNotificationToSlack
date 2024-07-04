@@ -1,0 +1,2 @@
+# earhquakeNotificationToSlack
+Slackへの地震通知
