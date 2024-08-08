@@ -16,7 +16,7 @@ function getEarthquakeAndVolcanoFeed() {
     Logger.log("前回スクリプト実行時刻: " + pre_date_text);
   }
   const pre_date = new Date(pre_date_text);
-  pre_date.setMinutes(pre_date.getMinutes() - 1);   // 前回のスクリプト実施時間と、地震発生時間が同じだった場合にもフォローできるよう1分引く
+  pre_date.setMinutes(pre_date.getMinutes() - 2);   // 前回のスクリプト実施時間と、地震発生時間が同じだった場合にもフォローできるよう2分引く
 
   const atom = XmlService.getNamespace('http://www.w3.org/2005/Atom');
   const feed_url = 'https://www.data.jma.go.jp/developer/xml/feed/eqvol_l.xml';  // feedのURL
@@ -100,7 +100,7 @@ function getEarthquakeAndVolcanoFeed() {
               };
               Logger.log("Slack通知");
               sendToSlack(payload);
-              quake_data_repote_time = one_previous_quake_data_reporte_time;  // 通知済みの地震発生時刻を保存
+              one_previous_quake_data_reporte_time = quake_data_repote_time;  // 通知済みの地震発生時刻を保存
             } else {
               Logger.log("震度がマッチしなかった");
             }
