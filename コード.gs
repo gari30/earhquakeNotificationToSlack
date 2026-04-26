@@ -211,7 +211,7 @@ function createGoogleForm(quake_date) {
   form.addParagraphTextItem().setTitle('就業について相談がある方は詳細を記入してください(状況・環境など)');
 
   // #8 連絡先
-  form.addTextItem().setTitle('連絡先(電話番号) SmartHRに登録の番号と違う場合は記入してください');
+  form.addTextItem().setTitle('連絡先(電話番号)を記入してください');
 
   // #9 その他連絡事項
   form.addParagraphTextItem().setTitle('その他連絡事項があれば記入してください');
